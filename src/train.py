@@ -29,10 +29,7 @@ def hyperparameter_tuning(X_train, y_train, param_grid):
 params = yaml.safe_load(open("params.yaml"))["train"]
 
 def train(data_path, 
-          model_path,
-          random_state, 
-          n_estimators,
-          max_depth):
+          model_path):
     data = pd.read_csv(data_path)
     X = data.drop(columns = ["Outcome"])
     y = data['Outcome']
@@ -103,7 +100,4 @@ def train(data_path,
 
 if __name__ == "__main__":
     train(params['data'], 
-          params['model'], 
-          params['random_state'], 
-          params['n_estimators'], 
-          params['max_depth'])
+          params['model'])

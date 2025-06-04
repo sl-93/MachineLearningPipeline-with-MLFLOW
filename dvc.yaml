@@ -16,10 +16,7 @@ stages:
     - src/train.py
     params:
     - train.data
-    - train.max_depth
     - train.model
-    - train.n_estimators
-    - train.random_state
     outs:
     - models/model.pkl
   evaluate:
